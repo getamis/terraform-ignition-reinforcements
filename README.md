@@ -1,7 +1,9 @@
 ![Terraform test](https://github.com/getamis/terraform-ignition-reinforcements/workflows/Terraform%20test/badge.svg) [![GitHub license](https://img.shields.io/github/license/getamis/terraform-ignition-reinforcements)](https://github.com/getamis/terraform-ignition-reinforcements/blob/master/LICENSE)
 
 # Terraform Ignition Reinforcement module
-Terraform Ignition modules to reinforce Container Linux OS. 
+Terraform Ignition modules to reinforce Container Linux OS. This repo contains the following submodules:
+
+* Docker opts dropin.
 
 ## Requirements
 
