@@ -6,6 +6,8 @@ Terraform Ignition modules to reinforce Container Linux OS. This repo contains t
 * Docker opts dropin.
 * locksmithd.
 * update-ca-certificates.
+* NTP servers override.
+* Node exporter.
 
 ## Requirements
 

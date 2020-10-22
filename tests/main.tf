@@ -10,17 +10,33 @@ module "ignition_update_ca_certificates" {
   source = "../modules/update-ca-certificates"
 }
 
+module "ignition_node_exporter" {
+  source = "../modules/node-exporter"
+}
+
+module "ignition_ntp" {
+  source = "../modules/ntp"
+  ntp_servers = [
+    "server 0.tw.pool.ntp.org",
+    "server 1.tw.pool.ntp.org",
+  ]
+}
+
 data "ignition_config" "main" {
   files = concat(
     module.ignition_docker.files,
     module.ignition_locksmithd.files,
     module.ignition_update_ca_certificates.files,
+    module.ignition_node_exporter.files,
+    module.ignition_ntp.files,
   )
 
   systemd = concat(
     module.ignition_docker.systemd_units,
     module.ignition_locksmithd.systemd_units,
     module.ignition_update_ca_certificates.systemd_units,
+    module.ignition_node_exporter.systemd_units,
+    module.ignition_ntp.systemd_units,
   )
 }
 
