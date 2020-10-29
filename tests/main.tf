@@ -22,6 +22,10 @@ module "ignition_ntp" {
   ]
 }
 
+module "ignition_ecr_helper" {
+  source = "../modules/ecr-helper"
+}
+
 data "ignition_config" "main" {
   files = concat(
     module.ignition_docker.files,
@@ -29,6 +33,7 @@ data "ignition_config" "main" {
     module.ignition_update_ca_certificates.files,
     module.ignition_node_exporter.files,
     module.ignition_ntp.files,
+    module.ignition_ecr_helper.files,
   )
 
   systemd = concat(
@@ -37,6 +42,7 @@ data "ignition_config" "main" {
     module.ignition_update_ca_certificates.systemd_units,
     module.ignition_node_exporter.systemd_units,
     module.ignition_ntp.systemd_units,
+    module.ignition_ecr_helper.systemd_units,
   )
 }
 
