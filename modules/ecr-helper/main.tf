@@ -4,7 +4,7 @@ data "ignition_file" "ecr_helper" {
   mode       = 755
 
   source {
-    source       = var.binary.url
+    source       = var.binary.source
     verification = var.binary.checksum
   }
 }
