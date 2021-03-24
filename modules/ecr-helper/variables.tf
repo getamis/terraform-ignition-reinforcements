@@ -5,7 +5,7 @@ variable "binary" {
     checksum = string
   })
   default = {
-    source      = "https://amazon-ecr-credential-helper-releases.s3.us-east-2.amazonaws.com/0.4.0/linux-amd64/docker-credential-ecr-login"
-    checksum = "sha512-0e626449930b344ab2addc0730e35ac40a99fc0bbe8b4e90e7eeeb0b06e9b1e348a9477d3057a1d9963bb87cb18ff05bdebd95ef204ab160bb7518fa71faeea8"
+    source   = "https://amazon-ecr-credential-helper-releases.s3.us-east-2.amazonaws.com/0.5.0/linux-amd64/docker-credential-ecr-login"
+    checksum = "sha512-2b07b612740514ce22f31645842316bdc07bdf8c0368e0652cd1ae61a8f9a6b2b58edb04ffbec884872d860668b3a4e102d1dfae16967b703eeb0f15e18ee22a"
   }
 }

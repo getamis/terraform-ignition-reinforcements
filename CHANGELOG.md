@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+<a name="v1.1.1"></a>
+## [v1.1.1] - 2021-03-24
+FEATURES:
+- Upgrade Amazon ECR credential helper version
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2020-12-07
