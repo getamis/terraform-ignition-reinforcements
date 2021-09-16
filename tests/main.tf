@@ -1,9 +1,12 @@
-module "ignition_docker" {
-  source = "../modules/docker"
-}
+terraform {
+  required_version = ">= 1.0.0"
 
-module "ignition_locksmithd" {
-  source = "../modules/locksmithd"
+  required_providers {
+    ignition = {
+      source  = "community-terraform-providers/ignition"
+      version = "~> 2.1"
+    }
+  }
 }
 
 module "ignition_update_ca_certificates" {
@@ -28,8 +31,6 @@ module "ignition_ecr_helper" {
 
 data "ignition_config" "main" {
   files = concat(
-    module.ignition_docker.files,
-    module.ignition_locksmithd.files,
     module.ignition_update_ca_certificates.files,
     module.ignition_node_exporter.files,
     module.ignition_ntp.files,
@@ -37,8 +38,6 @@ data "ignition_config" "main" {
   )
 
   systemd = concat(
-    module.ignition_docker.systemd_units,
-    module.ignition_locksmithd.systemd_units,
     module.ignition_update_ca_certificates.systemd_units,
     module.ignition_node_exporter.systemd_units,
     module.ignition_ntp.systemd_units,

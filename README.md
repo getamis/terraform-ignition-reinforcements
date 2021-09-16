@@ -12,7 +12,7 @@ Terraform Ignition modules to reinforce Container Linux OS. This repo contains t
 
 ## Requirements
 
-* Terraform v0.12.0+.
+* Terraform v1.0.0+.
 * [terraform-provider-ignition](https://github.com/terraform-providers/terraform-provider-ignition) 1.2.1+.
 
 ## Contributing
