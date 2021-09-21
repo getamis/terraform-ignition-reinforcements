@@ -1,0 +1,5 @@
+[Match]
+Name=eni*
+
+[Link]
+Unmanaged=yes
