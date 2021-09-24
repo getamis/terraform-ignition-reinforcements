@@ -1,0 +1,15 @@
+[Unit]
+Description = Systemd unit for disable sshd
+After = network.target docker.service
+
+[Service]
+Type = oneshot
+RemainAfterExit = true
+
+User = root
+Group = root
+
+ExecStart = /usr/bin/rm -rf /home/core/.ssh
+
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,4 @@
+UsePAM no
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+PermitRootLogin no
