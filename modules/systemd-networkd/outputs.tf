@@ -6,9 +6,12 @@ output "systemd_units" {
 output "files" {
   value = concat(
     [
-      data.ignition_file.systemd_networkd_eni.rendered,
-      data.ignition_file.systemd_networkd_eth.rendered,
+      data.ignition_file.systemd_networkd_log_level.rendered,
     ],
-    var.debug_log ? [data.ignition_file.systemd_networkd_debug.rendered] : []
+    var.manage_foreign_policy ? [
+      data.ignition_file.systemd_networkd_eni.rendered,
+      data.ignition_file.systemd_networkd_eth0.rendered,
+      data.ignition_file.systemd_networkd_ethn.rendered,
+    ] : []
   )
 }
