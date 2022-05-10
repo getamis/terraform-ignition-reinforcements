@@ -1,7 +1,7 @@
 data "ignition_file" "ecr_helper" {
   filesystem = "root"
   path       = "/opt/bin/docker-credential-ecr-login"
-  mode       = 755
+  mode       = 493
 
   source {
     source       = var.binary.source
