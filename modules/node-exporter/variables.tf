@@ -10,5 +10,5 @@ variable "listen_port" {
 
 variable "node_exporter_version" {
   type    = string
-  default = "0.18.1"
+  default = "1.3.1"
 }

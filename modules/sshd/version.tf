@@ -1,7 +1,10 @@
 terraform {
-  required_version = "~> 0.12.29"
+  required_version = ">= 0.13.1"
 
   required_providers {
-    ignition = "~> 1.2.1"
+    ignition = {
+      source  = "terraform-providers/ignition"
+      version = "~> 1.2.1"
+    }
   }
 }
