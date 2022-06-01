@@ -8,13 +8,13 @@ Type = simple
 User = root
 RemainAfterExit=true
 
-ExecStart = /opt/node_exporter \
+ExecStart = /usr/local/bin/node_exporter \
   --web.listen-address=${listen_address} \
   --web.telemetry-path=/metrics \
   --log.level=info \
-  --log.format=logger:stdout \
+  --log.format=json \
   --collector.textfile.directory=/var/lib/node_exporter/textfile_collector \
-  --collector.netdev.ignored-devices='^(weave|veth.*|docker0|datapath|dummy0)$' \
+  --collector.netdev.device-exclude='^(weave|veth.*|docker0|datapath|dummy0)$' \
   --collector.filesystem.ignored-mount-points='^/(sys|proc|dev|host|etc|var/lib/docker|run|var/lib/lxcfs|var/lib/kubelet)($|/)' \
   --collector.diskstats \
   --collector.filefd \

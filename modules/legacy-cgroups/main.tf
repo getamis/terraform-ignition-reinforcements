@@ -2,8 +2,8 @@ data "ignition_filesystem" "oem" {
   name = "OEM"
 
   mount {
-    device          = "/dev/disk/by-label/OEM"
-    format          = "btrfs"
+    device = "/dev/disk/by-label/OEM"
+    format = "btrfs"
   }
 }
 
@@ -32,7 +32,7 @@ data "ignition_systemd_unit" "containerd_dropin" {
   enabled = true
 
   dropin {
-    name = "10-use-cgroupfs.conf"
+    name    = "10-use-cgroupfs.conf"
     content = file("${path.module}/files/10-use-cgroupfs.conf")
   }
 }

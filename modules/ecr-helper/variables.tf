@@ -1,7 +1,7 @@
 variable "binary" {
   description = "Desired binary file url and checksum(sha512)."
   type = object({
-    source      = string
+    source   = string
     checksum = string
   })
   default = {
