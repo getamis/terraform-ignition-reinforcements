@@ -1,16 +1,12 @@
 data "ignition_filesystem" "oem" {
-  name = "OEM"
-
-  mount {
-    device = "/dev/disk/by-label/OEM"
-    format = "btrfs"
-  }
+  device = "/dev/disk/by-label/OEM"
+  format = "btrfs"
 }
 
 data "ignition_file" "grub_cfg" {
-  filesystem = "OEM"
   mode       = 420
-  path       = "/grub.cfg"
+  path       = "/usr/share/oem/grub.cfg"
+  overwrite  = true
 
   content {
     content = file("${path.module}/files/grub.cfg")
@@ -18,9 +14,9 @@ data "ignition_file" "grub_cfg" {
 }
 
 data "ignition_file" "flatcar_cgroupv1" {
-  filesystem = "root"
   mode       = 292
   path       = "/etc/flatcar-cgroupv1"
+  overwrite  = true
 
   content {
     content = ""

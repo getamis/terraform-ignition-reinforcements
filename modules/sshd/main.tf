@@ -5,8 +5,9 @@ data "ignition_systemd_unit" "sshd_disable" {
 }
 
 data "ignition_file" "sshd_config" {
-  filesystem = "root"
+  
   mode       = 420
+  overwrite  = true
 
   path = "/etc/ssh/sshd_config"
 
