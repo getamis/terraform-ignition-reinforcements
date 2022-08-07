@@ -4,9 +4,9 @@ data "ignition_filesystem" "oem" {
 }
 
 data "ignition_file" "grub_cfg" {
-  mode       = 420
-  path       = "/usr/share/oem/grub.cfg"
-  overwrite  = true
+  mode      = 420
+  path      = "/usr/share/oem/grub.cfg"
+  overwrite = true
 
   content {
     content = file("${path.module}/files/grub.cfg")
@@ -14,9 +14,9 @@ data "ignition_file" "grub_cfg" {
 }
 
 data "ignition_file" "flatcar_cgroupv1" {
-  mode       = 292
-  path       = "/etc/flatcar-cgroupv1"
-  overwrite  = true
+  mode      = 292
+  path      = "/etc/flatcar-cgroupv1"
+  overwrite = true
 
   content {
     content = ""
