@@ -8,7 +8,7 @@ Type = simple
 User = root
 RemainAfterExit=true
 
-ExecStart = /usr/local/bin/node_exporter \
+ExecStart = /opt/bin/node_exporter \
   --web.listen-address=${listen_address} \
   --web.telemetry-path=/metrics \
   --log.level=info \

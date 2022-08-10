@@ -1,12 +1,13 @@
 data "ignition_systemd_unit" "sshd_disable" {
   name    = "sshd-disable.service"
-  enabled = !var.enable
+  enabled = ! var.enable
   content = file("${path.module}/files/services/sshd-disable.service")
 }
 
 data "ignition_file" "sshd_config" {
-  filesystem = "root"
-  mode       = 420
+
+  mode      = 420
+  overwrite = true
 
   path = "/etc/ssh/sshd_config"
 

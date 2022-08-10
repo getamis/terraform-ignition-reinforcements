@@ -6,9 +6,10 @@ locals {
 }
 
 data "ignition_file" "systemd_networkd_log_level" {
-  filesystem = "root"
-  mode       = 420
-  path       = "/etc/systemd/system/systemd-networkd.service.d/10-log-level.conf"
+
+  mode      = 420
+  path      = "/etc/systemd/system/systemd-networkd.service.d/10-log-level.conf"
+  overwrite = true
 
   content {
     content = templatefile("${path.module}/templates/10-log-level.conf.tpl", {
@@ -18,9 +19,10 @@ data "ignition_file" "systemd_networkd_log_level" {
 }
 
 data "ignition_file" "systemd_networkd_eni" {
-  filesystem = "root"
-  mode       = 420
-  path       = "/etc/systemd/network/10-eni.network"
+
+  mode      = 420
+  path      = "/etc/systemd/network/10-eni.network"
+  overwrite = true
 
   content {
     content = file("${path.module}/files/10-eni.network")
@@ -28,9 +30,10 @@ data "ignition_file" "systemd_networkd_eni" {
 }
 
 data "ignition_file" "systemd_networkd_eth0" {
-  filesystem = "root"
-  mode       = 420
-  path       = "/etc/systemd/network/10-eth0.network"
+
+  mode      = 420
+  path      = "/etc/systemd/network/10-eth0.network"
+  overwrite = true
 
   content {
     content = file("${path.module}/files/10-eth0.network")
@@ -38,9 +41,10 @@ data "ignition_file" "systemd_networkd_eth0" {
 }
 
 data "ignition_file" "systemd_networkd_ethn" {
-  filesystem = "root"
-  mode       = 420
-  path       = "/etc/systemd/network/10-ethn.network"
+
+  mode      = 420
+  path      = "/etc/systemd/network/10-ethn.network"
+  overwrite = true
 
   content {
     content = file("${path.module}/files/10-ethn.network")
