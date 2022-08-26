@@ -1,6 +1,6 @@
 data "ignition_systemd_unit" "sshd_disable" {
   name    = "sshd-disable.service"
-  enabled = ! var.enable
+  enabled = !var.enable
   content = file("${path.module}/files/services/sshd-disable.service")
 }
 
