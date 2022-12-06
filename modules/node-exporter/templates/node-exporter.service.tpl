@@ -31,7 +31,8 @@ ExecStart = /opt/bin/node_exporter \
   --collector.textfile \
   --collector.time \
   --collector.uname \
-  --collector.vmstat
+  --collector.vmstat \
+  --collector.ethtool
 
 WorkingDirectory = /
 Restart = on-failure
