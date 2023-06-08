@@ -13,11 +13,11 @@ variable "docker_opts" {
 }
 
 variable "docker_cgroups" {
-  type        = list(string)
+  type    = list(string)
   default = []
 }
 
 variable "docker_cgroup_driver" {
-  type = string
+  type    = string
   default = "cgroupfs"
 }
