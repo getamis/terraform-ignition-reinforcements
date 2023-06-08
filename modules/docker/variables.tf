@@ -9,6 +9,15 @@ variable "docker_opts" {
     "--live-restore",
     "--max-concurrent-downloads=10",
     "--experimental",
-    "--exec-opt native.cgroupdriver=systemd"
   ]
+}
+
+variable "docker_cgroups" {
+  type        = list(string)
+  default = []
+}
+
+variable "docker_cgroup_driver" {
+  type = string
+  default = "cgroupfs"
 }

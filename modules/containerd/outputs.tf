@@ -1,5 +1,5 @@
 output "files" {
   value = [
-    data.files.containerd_config.rendered
+    data.ignition_file.containerd_config.rendered
   ]
 }
