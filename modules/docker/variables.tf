@@ -9,5 +9,6 @@ variable "docker_opts" {
     "--live-restore",
     "--max-concurrent-downloads=10",
     "--experimental",
+    "--exec-opt native.cgroupdriver=systemd"
   ]
 }
