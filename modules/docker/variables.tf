@@ -11,3 +11,13 @@ variable "docker_opts" {
     "--experimental",
   ]
 }
+
+variable "docker_cgroups" {
+  type    = list(string)
+  default = []
+}
+
+variable "docker_cgroup_driver" {
+  type    = string
+  default = "cgroupfs"
+}
