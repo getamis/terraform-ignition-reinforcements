@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+<a name="v1.27.2.0"></a>
+## [v1.27.2.0] - 2023-06-21
+
+- add ecr credentail provider config
+
 
 <a name="v1.23.10.0"></a>
 ## [v1.23.10.0] - 2022-08-26
@@ -73,7 +78,8 @@ FEATURES:
 - add Docker drop-in module ([#1](https://github.com/getamis/terraform-ignition-kubernetes/issues/1))
 
 
-[Unreleased]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.23.10.0...HEAD
+[Unreleased]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.27.2.0...HEAD
+[v1.27.2.0]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.23.10.0...v1.27.2.0
 [v1.23.10.0]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.19.16.1...v1.23.10.0
 [v1.19.16.1]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.19.16.0...v1.19.16.1
 [v1.19.16.0]: https://github.com/getamis/terraform-ignition-kubernetes/compare/v1.1.5...v1.19.16.0
