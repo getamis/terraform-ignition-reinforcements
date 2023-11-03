@@ -1,10 +1,6 @@
 # the systemd-networkd configuration file 10-eni.network and 10-eth.network need to be adjusted after systemd updated
 # Reference: https://github.com/aws/amazon-vpc-cni-k8s/issues/1600
 
-locals {
-  systemd_log_level = var.debug ? "debug" : "warning"
-}
-
 data "ignition_file" "systemd_networkd_log_level" {
 
   mode      = 420
@@ -13,7 +9,7 @@ data "ignition_file" "systemd_networkd_log_level" {
 
   content {
     content = templatefile("${path.module}/templates/10-log-level.conf.tpl", {
-      log_level = local.systemd_log_level
+      log_level = var.log_level
     })
   }
 }

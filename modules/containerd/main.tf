@@ -12,9 +12,10 @@ data "ignition_file" "containerd_config" {
   overwrite = true
 
   content {
-    content = file("${path.module}/files/config.toml")
+    content = templatefile("${path.module}/files/config.toml", {
+      log_level = var.log_level
+    })
   }
-
 }
 
 data "ignition_file" "crictl_config" {

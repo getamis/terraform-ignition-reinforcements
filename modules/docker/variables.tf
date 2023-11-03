@@ -21,3 +21,9 @@ variable "docker_cgroup_driver" {
   type    = string
   default = "cgroupfs"
 }
+
+variable "log_level" {
+  description = "(Optional) Docker daemon log level (debug, info, warn, error, fatal), default is info"
+  type        = string
+  default     = "info"
+}
