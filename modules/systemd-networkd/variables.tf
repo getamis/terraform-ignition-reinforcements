@@ -1,7 +1,7 @@
-variable "debug" {
-  description = "(Optional) Enable CoreOS Systemd Networkd debug log or not"
-  type        = bool
-  default     = false
+variable "log_level" {
+  description = "(Optional) The systemd-networkd log level, default is warning"
+  type        = string
+  default     = "warning"
 }
 
 variable "manage_foreign_policy" {
