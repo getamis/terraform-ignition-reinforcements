@@ -21,8 +21,8 @@ declare -r lockdir="${runtimeroot}/setup-policy-routes"
 declare -r unitdir="/run/systemd/network"
 declare -r reload_flag="${runtimeroot}/.policy-routes-reload-networkd"
 
-libdir=${LIBDIR_OVERRIDE:-/usr/lib}
-# shellcheck source=/usr/lib/ec2-net-utils-lib.sh
+libdir=${LIBDIR_OVERRIDE:-/opt/lib}
+# shellcheck source=/opt/lib/ec2-net-utils-lib.sh
 . "${libdir}/ec2-net-utils-lib.sh"
 
 iface="$1"

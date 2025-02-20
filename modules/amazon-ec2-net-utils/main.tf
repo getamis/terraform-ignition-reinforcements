@@ -1,7 +1,7 @@
 data "ignition_file" "setup_policy_routes" {
   mode = 493 # 0755
 
-  path = "/usr/bin/setup-policy-routes"
+  path = "/opt/bin/setup-policy-routes"
 
   content {
     content = file("${path.module}/files/bin/setup-policy-routes.sh")
@@ -11,13 +11,14 @@ data "ignition_file" "setup_policy_routes" {
 data "ignition_file" "lib_sh" {
   mode = 420 # 0644
 
-  path = "/usr/lib/ec2-net-utils-lib.sh"
+  path = "/opt/lib/ec2-net-utils-lib.sh"
 
   content {
     content = file("${path.module}/files/lib/lib.sh")
   }
 }
 
+// It's exist in flatcar before we add the 90-ipv6-dad.conf
 data "ignition_file" "sysctl_ipv6" {
   mode = 420 # 0644
 

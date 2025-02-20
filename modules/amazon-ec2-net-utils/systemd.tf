@@ -1,6 +1,6 @@
 // network/80-ec2.network
 data "ignition_file" "ec2_network" {
-  path = "/etc/systemd/network/80-ec2.network"
+  path = "/opt/lib/80-ec2.network"
   mode = 420 # 0644
   content {
     content = file("${path.module}/files/systemd/network/80-ec2.network")

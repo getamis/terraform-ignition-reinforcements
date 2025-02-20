@@ -362,7 +362,8 @@ create_interface_config() {
     local network_card=$3
     local ether=$4
 
-    local libdir=/usr/lib/systemd/network
+    # replace /usr/lib with /opt/lib because the filesystem is read-only
+    local libdir=/opt/lib
     local defconfig="${libdir}/80-ec2.network"
 
     local -i retval=0
