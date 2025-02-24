@@ -9,6 +9,8 @@ Terraform Ignition modules to reinforce Container Linux OS. This repo contains t
 * NTP servers override.
 * Node exporter.
 * Amazon ECR credential helper.
+* amazon-ec2-net-utils
+
 
 ## Requirements
 
