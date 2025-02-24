@@ -13,6 +13,10 @@ module "ignition_docker" {
   source = "../modules/docker"
 }
 
+module "ignition_ecr_credential_provider" {
+  source = "../modules/ecr-credential-provider"
+}
+
 module "ignition_ecr_helper" {
   source = "../modules/ecr-helper"
 }
@@ -52,6 +56,7 @@ module "ignition_update_ca_certificates" {
 data "ignition_config" "main" {
   files = concat(
     module.ignition_docker.files,
+    module.ignition_ecr_credential_provider.files,
     module.ignition_ecr_helper.files,
     module.ignition_legacy_cgroups.files,
     module.ignition_locksmithd.files,
