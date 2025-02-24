@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ignition = {
       source = "terraform-providers/ignition"
-      version = "== 2.3.1"
+      version = "= 2.3.1"
     }
     local = {
       source = "hashicorp/local"
