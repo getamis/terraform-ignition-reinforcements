@@ -9,6 +9,10 @@ terraform {
   }
 }
 
+module "ignition_anazon_ec2_net_utils" {
+  source = "../modules/amazon-ec2-net-utils"
+}
+
 module "ignition_docker" {
   source = "../modules/docker"
 }
@@ -55,6 +59,7 @@ module "ignition_update_ca_certificates" {
 
 data "ignition_config" "main" {
   files = concat(
+    module.ignition_anazon_ec2_net_utils.files,
     module.ignition_docker.files,
     module.ignition_ecr_credential_provider.files,
     module.ignition_ecr_helper.files,
@@ -68,6 +73,7 @@ data "ignition_config" "main" {
   )
 
   systemd = concat(
+    module.ignition_anazon_ec2_net_utils.systemd_units,
     module.ignition_docker.systemd_units,
     module.ignition_ecr_helper.systemd_units,
     module.ignition_legacy_cgroups.systemd_units,
