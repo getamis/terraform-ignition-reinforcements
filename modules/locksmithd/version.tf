@@ -4,7 +4,7 @@ terraform {
   required_providers {
     ignition = {
       source  = "community-terraform-providers/ignition"
-      version = "~> 2.0"
+      version = "== 2.3.1"
     }
   }
 }
